@@ -6,7 +6,7 @@
 	.show {
 		display: block;
 		background-color: rgba(0, 0, 0, 0.8);
-		z-index: 999;
+		z-index: 9999;
 	}
 </style>
 
