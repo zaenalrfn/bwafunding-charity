@@ -1,1 +1,1 @@
-<slot /> <!-- apapun yang ditulis di CharityList Bagian modal akan muncul di sini -->
+<slot /> <!-- apapun yang ditulis di CharityList Bagian Modal akan muncul di sini -->

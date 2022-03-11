@@ -10,6 +10,8 @@
 	}
 </style>
 
+
+
 <!-- bagian html -->
 <!-- popularCauses section -->
 <section id="popularcause" class="bg-gray waypoint-tigger xs-section-padding">
@@ -118,10 +120,10 @@
 
 								<span class="xs-separetor"></span>
 
-								<button on:click={handleButton} data-toggle="modal" data-target="#exampleModal"
+								<a href="/donation/{charity.id}" data-toggle="modal" data-target="#exampleModal"
 								class="btn btn-primary btn-block">
 								Donate This Cause
-								</button>
+								</a>
 						</div><!-- .xs-item-content END -->
 					</div><!-- .xs-popular-item END -->
 				</div>
@@ -180,7 +182,7 @@
 		isModalOpen = true;
 		console.log('berhasil')
 	}
-
+	
 	function handleCloseModal() {
 		isModalOpen = false;
 	}
