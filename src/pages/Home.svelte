@@ -5,6 +5,15 @@
 
 <!-- bagian html -->
 
+<Header />
+<Welcome />
+{#await data}
+	<Loader />
+{:then charities}
+	<CharityList {charities} />
+{/await}
+<Promo />
+<Footer />
 
 
 <!-- bagian javascript -->
@@ -33,13 +42,3 @@
 	// let charities = ['Charity 1', 'Charity 2', 'Charity 3', 'Charity 4'];
 </script>
 
-
-<Header />
-<Welcome />
-{#await data}
-	<Loader />
-{:then charities}
-	<CharityList {charities} />
-{/await}
-<Promo />
-<Footer />
