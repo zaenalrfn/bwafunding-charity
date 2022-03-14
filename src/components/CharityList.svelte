@@ -169,7 +169,7 @@
 		return nominal.toLocaleString('id-ID', {
 			style: 'currency',
 			currency: 'IDR',
-		})
+		});
 	}
 
 	function calculateDayRemaining(date_end) {
