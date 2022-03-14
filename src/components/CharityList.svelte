@@ -8,6 +8,9 @@
 		background-color: rgba(0, 0, 0, 0.8);
 		z-index: 9999;
 	}
+	.xs-list-with-content li:nth-child(1) {
+		margin-right: 25px;
+	}
 </style>
 
 
@@ -24,11 +27,9 @@
 				raise capital from anyone.</p>
 			</div><!-- .xs-heading-title END -->
 		</div><!-- .row end -->
-		{#if charities !== undefined}
-		{#each charities as charity}
 		<div class="row">
+		{#each charities as charity}
 			<div class="col-lg-4 col-md-6">
-
 				<!-- bagian modal -->
 			  {#if isModalOpen === true}
 				<Modal>
@@ -78,7 +79,7 @@
 			  {/if}
 				<!-- akhir bagian modal -->
 
-				<div class="xs-popular-item xs-box-shadow">
+				<div class="xs-popular-item xs-box-shadow d-flex">
 					<div class="xs-item-header">
 
 						<img src="{charity.thumbnail}" alt="">
@@ -104,8 +105,8 @@
 								<li>{formatCurrency(charity.pledged)}<span>Pledged</span></li>
 								<li><span class="number-percentage-count number-percentage" data-value="90"
 									data-animation-duration="3500">{calculateFounded(charity.pledged, charity.target)}</span>% <span>Funded</span></li>
-									<li>{calculateDayRemaining(charity.date_end)}<span>Days to go</span></li>
-								</ul>
+								<li>{calculateDayRemaining(charity.date_end)}<span>Days to go</span></li>
+							</ul>
 
 								<span class="xs-separetor"></span>
 
@@ -128,9 +129,8 @@
 					</div><!-- .xs-popular-item END -->
 				</div>
 			</div>
-		</div><!-- .row end -->
 		{/each}
-		{/if}
+		</div><!-- .row end -->
 	</div><!-- .container end -->
 </section><!-- End popularCauses section -->
 
@@ -155,6 +155,7 @@
 
 <!-- bagian javascript -->
 <script type="text/javascript">
+	import {onMount, onDestroy, beforeUpdate, afterUpdate} from 'svelte';
 	import Modal from './Modal.svelte';
 	export let charities;
 	let isModalOpen = false;

@@ -4,27 +4,42 @@
 </svelte:head> -->
 
 <!-- bagian html -->
-<Header />
-<Welcome />
-<CharityList {charities} />
-<Promo />
-<Footer />
 
 
 
 <!-- bagian javascript -->
 <script>
 	import CharityList from '../components/CharityList.svelte';
-	import Header from '../components/Header.svelte'
-	import Welcome from '../components/Welcome.svelte'
-	import Promo from '../components/Promo.svelte'
-	import Footer from '../components/Footer.svelte'
-	import {charities} from '../data/charities.js';
+	import Header from '../components/Header.svelte';
+	import Welcome from '../components/Welcome.svelte';
+	import Promo from '../components/Promo.svelte';
+	import Footer from '../components/Footer.svelte';
+	import Loader from '../components/Loader.svelte';
+
 	let title = "Charity";
+	let data = getData();
 
-	setTimeout(function(){
-		title = "donation";
-	}, 2000)
+	async function getData() {
+		const res = await fetch('http://charity-api-bwa.herokuapp.com/charities');
+		const data = await res.json();
 
+
+		if(res.ok) {
+			return data;
+		} else {
+			throw new Error(data);
+		}
+	}
 	// let charities = ['Charity 1', 'Charity 2', 'Charity 3', 'Charity 4'];
 </script>
+
+
+<Header />
+<Welcome />
+{#await data}
+	<Loader />
+{:then charities}
+	<CharityList {charities} />
+{/await}
+<Promo />
+<Footer />
