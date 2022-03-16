@@ -4,7 +4,14 @@
 https://bwfunding-charity-02.netlify.app/
 
 
-# svelte app
+## Teknologi yang digunakan
+Framework Svelte
+page js
+
+## Deskripsi
+Tugas PKL magangjogja.com
+Divisi: Programmer
+<!-- # svelte app
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
 
@@ -106,4 +113,4 @@ Then, from within your project folder:
 ```bash
 npm run build
 surge public my-project.surge.sh
-```
+``` -->
