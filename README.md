@@ -5,12 +5,12 @@ https://bwfunding-charity-02.netlify.app/
 
 
 ## Teknologi yang digunakan
-Framework Svelte
+Framework Svelte,
 page js
 
 ## Deskripsi
-Tugas PKL magangjogja.com
-Divisi: Programmer
+Tugas PKL magangjogja.com,
+Divisi Programmer
 <!-- # svelte app
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
