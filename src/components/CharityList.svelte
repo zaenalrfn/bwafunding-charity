@@ -28,7 +28,8 @@
 			</div><!-- .xs-heading-title END -->
 		</div><!-- .row end -->
 		<div class="row">
-		{#each charities as charity}
+		<!-- Melakukan otomatis subscribe dengan menambakan dollar di depan charities-->
+		{#each $charities as charity}
 			<div class="col-lg-4 col-md-6">
 				<!-- bagian modal -->
 			  {#if isModalOpen === true}
@@ -129,6 +130,8 @@
 					</div><!-- .xs-popular-item END -->
 				</div>
 			</div>
+			{:else}
+			<Loader />
 		{/each}
 		</div><!-- .row end -->
 	</div><!-- .container end -->
@@ -155,10 +158,19 @@
 
 <!-- bagian javascript -->
 <script type="text/javascript">
+	import { charities } from '../stores/data.js';
 	import {onMount, onDestroy, beforeUpdate, afterUpdate} from 'svelte';
 	import Modal from './Modal.svelte';
-	export let charities;
+	import Loader from '../components/Loader.svelte';
 	let isModalOpen = false;
+
+
+	// let data = [];
+	// manual subscribe
+	// charities.subscribe(function(value) {
+	// 	console.log(value)
+	// 	data = value;
+	// })
 
 	function calculateFounded(pledged, target) {
 		return Math.round((1 / (target / pledged)) * 100);
